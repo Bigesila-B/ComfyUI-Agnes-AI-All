@@ -16,5 +16,5 @@ Documentation = "https://github.com/Bigesila-B/ComfyUI-AgnesAI#readme"
 "Bug Tracker" = "https://github.com/Bigesila-B/ComfyUI-AgnesAI/issues"
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "bigesila"
 DisplayName = "ComfyUI Agnes AI"
