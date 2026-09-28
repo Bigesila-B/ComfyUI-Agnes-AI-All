@@ -1,0 +1,20 @@
+[project]
+name = "comfyui-agnes-ai"
+description = "Agnes AI nodes for ComfyUI: image generation (text-to-image / image-to-image / multi-image compose) and video generation (text / keyframe / reference modes)"
+version = "0.5.4"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = ["requests", "pillow"]
+classifiers = [
+    # 纯 API 调用节点，不依赖本地 GPU / 操作系统
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/Bigesila-B/ComfyUI-AgnesAI"
+Documentation = "https://github.com/Bigesila-B/ComfyUI-AgnesAI#readme"
+"Bug Tracker" = "https://github.com/Bigesila-B/ComfyUI-AgnesAI/issues"
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI Agnes AI"

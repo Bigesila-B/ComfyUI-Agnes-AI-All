@@ -1,0 +1,70 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "AgnesImageGenerate",
+      "pos": [200, 200],
+      "size": [380, 320],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [1],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AgnesImageGenerate"
+      },
+      "widgets_values": [
+        "A luminous floating city above a misty canyon at sunrise, cinematic realism",
+        "agnes-image-2.5-flash",
+        "1K",
+        "16:9",
+        "",
+        "https://api.agnes-ai.cn/v1"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "SaveImage",
+      "pos": [660, 200],
+      "size": [440, 380],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "AgnesImage"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

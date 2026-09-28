@@ -1,0 +1,6 @@
+# 发布到 Comfy Registry 时排除的开发文件（语法同 .gitignore，叠加在 .gitignore 之上）
+# 见 https://docs.comfy.org/zh/registry/publishing
+
+tests/
+.mimosa/
+__pycache__/

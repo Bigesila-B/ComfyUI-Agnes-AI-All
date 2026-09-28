@@ -1,0 +1,9 @@
+# 开发环境产物
+__pycache__/
+*.py[cod]
+.mimosa/
+.venv/
+venv/
+
+# 干跑测试的临时落盘目录
+tests/_tmp_output/

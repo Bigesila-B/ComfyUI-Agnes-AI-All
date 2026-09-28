@@ -1,0 +1,74 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "AgnesVideoGenerate",
+      "pos": [200, 200],
+      "size": [400, 460],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [1],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AgnesVideoGenerate"
+      },
+      "widgets_values": [
+        "文生视频",
+        "A cinematic shot of a cat walking on the beach at sunset, soft ocean waves, warm golden lighting",
+        "agnes-video-2.5-flash",
+        "5",
+        "720P",
+        "16:9",
+        0,
+        "",
+        "https://api.agnes-ai.cn/v1",
+        1200
+      ]
+    },
+    {
+      "id": 2,
+      "type": "SaveVideo",
+      "pos": [680, 200],
+      "size": [440, 300],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 1
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "video/AgnesVideo"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
