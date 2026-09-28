@@ -13,7 +13,7 @@
 
 ## 安装
 
-1. 把本目录（整个 `ComfyUI-AgnesAI` 文件夹）放入 `ComfyUI/custom_nodes/`，重启 ComfyUI；
+1. 把本目录（整个 `ComfyUI-Agnes-AI-All` 文件夹）放入 `ComfyUI/custom_nodes/`，重启 ComfyUI；
    或用 ComfyUI Manager 的 "Install via Git URL" 安装。
 2. 依赖只有 `requests` 和 `pillow`（ComfyUI 环境通常已自带）。
 
@@ -66,9 +66,11 @@
 ## 目录结构
 
 ```
-ComfyUI-AgnesAI/
+ComfyUI-Agnes-AI-All/
 ├── __init__.py            # V3 注册（comfy_entrypoint）
 ├── pyproject.toml         # Comfy Manager 安装清单
+├── LICENSE                # MIT 许可证
+├── icon.png               # Registry 图标（400×400）
 ├── nodes/
 │   ├── agnes_api.py       # API 客户端（图像 / 视频任务创建与自适应退避轮询）
 │   ├── agnes_image.py     # 图片生成节点（V3，8 个参考图口）

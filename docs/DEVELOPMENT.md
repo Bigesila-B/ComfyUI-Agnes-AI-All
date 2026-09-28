@@ -201,3 +201,12 @@ tests/panel_test.mjs 素材面板前端逻辑测试（stub DOM/app/api + 改写 
     - **新增前端测试** `tests/panel_test.mjs`：改写 `web/agnes_media.js` 的 import 为 globalThis 替身后写入临时 .mjs 动态导入，用最小 DOM 替身驱动 `onNodeCreated`，21 项断言覆盖两条置灰路径（callback / onDrawForeground 兜底）、禁用态拖入被忽略、onConfigure 恢复、跳过/超限/体积提示、`onWidgetChanged` 传满 4 参（reading 'options' 回归）
     - **Python 测试补栏**：新增 14 项（合计 109 项全过）——`saved_path` 输出口 schema、落盘相对路径/文件内容/ui 条目/不覆盖、落盘失败三断言、`_save_png` 单元、排队估算递增、估算值区间、完成上报 100、真实 progress 低于估算不回退
     - 未做：seed tooltip 补「相同 seed 可提高复现性」（用户明确跳过）
+  - v0.5.5（发布到 Comfy Registry 引出的改名）：
+    - **背景**：`comfyui-agnes-ai` 这个节点 ID 已被占用——注册表上早有 `ComfyUI-Agnes-AI`（发布者 `ailab`，仓库 `1038lab/ComfyUI-Agnes-AI`，已到 1.1.0、574 下载、38 stars）。节点 ID 不区分大小写，故首次 `comfy node publish` 被拒（400 `A node with this ID already exists`）
+    - **改名**：节点 ID → `ComfyUI-Agnes-AI-All`（先用 `GET api.comfy.org/nodes/<id>` 查得 404 可用才发布）；GitHub 仓库与包目录同步改名 `ComfyUI-AgnesAI` → `ComfyUI-Agnes-AI-All`，pyproject 内 4 处 URL（Repository/Documentation/Bug Tracker/Icon）随之更新
+    - **pyproject 补注册表字段**：`[project.urls]` 三项、`classifiers`（`OS Independent`，本包为纯 API 调用节点）、`license` 由 `{text = "MIT"}` 改为规范推荐的 `{file = "LICENSE"}` 并新增 MIT LICENSE；删掉原先的空 `Icon = ""`（可选字段留空串有被判非法 URL 的风险）
+    - **Registry 图标**：新增 `icon.png`，由 1920×1920 原图降采样为 400×400 正方形 PNG（同时满足发布页「≤800×400」与规范页「≤400×400 正方形」两个口径），接入 `[tool.comfy] Icon` 指向仓库 raw 地址
+    - **新增 `.gitignore` / `.comfyignore`**：后者把 `tests/` 排除出 Registry 归档（`docs/`、`example/` 保留）
+    - **发布结果**：节点 `ComfyUI-Agnes-AI-All`（发布者 `bigesila`）创建成功，版本 0.5.4 上传成功、状态 `NodeVersionStatusPending`（待审核）；本版 0.5.5 为改名后的元数据修正版，需再次 `comfy node publish` 才能让注册表上的 URL 生效
+    - **未填 `requires-comfyui`**：V3 节点的真实最低兼容版本未实测，留空以免用户装不上
+    - 教训：`comfy node publish` 前应先 `GET https://api.comfy.org/nodes/<node-id>` 确认 ID 未被占用——节点 ID 全局唯一且发布后不可更改
