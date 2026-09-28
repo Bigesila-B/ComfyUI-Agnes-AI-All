@@ -7,3 +7,6 @@ venv/
 
 # 干跑测试的临时落盘目录
 tests/_tmp_output/
+
+# comfy node publish 打包时在包根目录生成的归档
+node.zip
