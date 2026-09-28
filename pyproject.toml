@@ -1,5 +1,5 @@
 [project]
-name = "comfyui-agnes-ai"
+name = "ComfyUI-Agnes-AI-All"
 description = "Agnes AI nodes for ComfyUI: image generation (text-to-image / image-to-image / multi-image compose) and video generation (text / keyframe / reference modes)"
 version = "0.5.4"
 license = { file = "LICENSE" }
@@ -18,3 +18,4 @@ Documentation = "https://github.com/Bigesila-B/ComfyUI-AgnesAI#readme"
 [tool.comfy]
 PublisherId = "bigesila"
 DisplayName = "ComfyUI Agnes AI"
+Icon = "https://raw.githubusercontent.com/Bigesila-B/ComfyUI-AgnesAI/main/icon.png"
